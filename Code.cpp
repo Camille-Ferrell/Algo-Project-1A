@@ -42,8 +42,13 @@ int Code::check_correct(const vector<int>& guess) {
 // Check if value in index i is equal for guess and secret_code
 // Returns # of incorrect answers
 int Code::check_incorrect(const vector<int>& guess) {
-    int count = 0;
+
+    int count = 0; // Declare Counting Int
+
     vector<int> secret_copy = secret_code;
+
+    // I DONT KNOW WHAT THIS IS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // Maybe can just use same thin as line 33 to 37 just with a != on line 35
     for (int i = 0; i < n; ++i) {
         auto it = find(secret_copy.begin(), secret_copy.end(), guess[i]);
         if (it != secret_copy.end()) {
@@ -55,10 +60,15 @@ int Code::check_incorrect(const vector<int>& guess) {
     return count;
 }
 
+// Print Secret_Code
 void Code::print_secret_code() {
     cout << "Secret Code: ";
+
+    // Iterate through vector and return digit
     for (int digit : secret_code) {
         cout << digit << " ";
     }
+
     cout << endl;
+
 }
