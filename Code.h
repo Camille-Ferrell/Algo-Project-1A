@@ -6,19 +6,19 @@
 class Code {
 private:
     vector<int> secret_code;
-    int n;
-    int m;
-    
+    int n; // length
+    int m; // range
+
 public:
-    Code(int n, int m);
+    Code(int n, int m); // constructor
 
-    void initialize_randomly();
+    void initialize_randomly(); // the function that initializes the secret code
 
-    int check_correct(const std::vector<int>& guess);
+    int check_correct(const vector<int>& guess); // check correct function passing only the guess as a parameter
 
-    int check_incorrect(const std::vector<int>& guess);
+    int check_incorrect(const vector<int>& guess); // check incorrect function
 
-    void print_secret_code();
+    void print_secret_code(); // function to print the secret code
 };
 
 #endif // CODE_H
