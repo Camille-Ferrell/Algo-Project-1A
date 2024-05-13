@@ -8,6 +8,7 @@ private:
     vector<int> secret_code;
     int n;
     int m;
+    
 public:
     Code(int n, int m);
 
