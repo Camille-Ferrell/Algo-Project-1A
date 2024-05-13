@@ -5,11 +5,13 @@
 
 using namespace std;
 
+// Constructor
 code::code(int m, int n) {
     length = n;
     range = m;
 }
 
+// Get Length from Private
 int code::getLength() const {
     return length;
 }
@@ -18,6 +20,7 @@ int code::getRange() const {
     return range;
 }
 
+// Read input from user
 void code::readInputs() {
     cout << "Please Enter the Desired Code Length: ";
     cin >> length;
@@ -25,6 +28,7 @@ void code::readInputs() {
     cin >> range;
 }
 
+// make the random sequence and use random time seed later
 vector<int> code::makeSequence(int n, int m) {
     vector<int> Sequence;
 
@@ -35,6 +39,7 @@ vector<int> code::makeSequence(int n, int m) {
     return Sequence;
 }
 
+// Obtain the guess from the user
 vector<int> code::getSequence(int n) {
     vector<int> guess(n);
     cout << "Please Enter Your Guess of the Code: \n";
@@ -48,6 +53,8 @@ vector<int> code::getSequence(int n) {
     return guess;
 }
 
+// Check if secretCode is equal to Guess at same index
+// If it is, add 1 to correct & returns # of correct
 int code::checkCorrect(vector<int> Sequence, vector<int> Guess, int n) {
     int correct = 0;
 
@@ -60,6 +67,8 @@ int code::checkCorrect(vector<int> Sequence, vector<int> Guess, int n) {
     return correct;
 }
 
+// Check if secretCode is NOT equal to Guess at same index
+// If it is incorrect, add 1 to coutner & returns # of incorrect
 int code::checkIncorrect(vector<int> Sequence, vector<int> Guess, int n) {
     int incorrect = 0;
 
