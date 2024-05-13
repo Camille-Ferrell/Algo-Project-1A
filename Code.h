@@ -14,9 +14,9 @@ public:
 
     void initialize_randomly(); // the function that initializes the secret code
 
-    int check_correct(const std::vector<int>& guess); // check correct function passing only the guess as a parameter
+    int check_correct(const vector<int>& guess); // check correct function passing only the guess as a parameter
 
-    int check_incorrect(const std::vector<int>& guess); // check incorrect function
+    int check_incorrect(const vector<int>& guess); // check incorrect function
 
     void print_secret_code(); // function to print the secret code
 };
