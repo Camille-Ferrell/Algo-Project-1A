@@ -7,7 +7,7 @@
 
 using namespace std;
 
-// Constructor 
+// Constructor 1
 Code::Code(int n, int m) {
     this->n = n; // Getting Private Members
     this->m = m;
