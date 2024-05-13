@@ -38,7 +38,7 @@ int Code::check_correct(const vector<int>& guess) {
 
 int Code::check_incorrect(const vector<int>& guess) {
     int count = 0;
-    std::vector<int> secret_copy = secret_code;
+    vector<int> secret_copy = secret_code;
     for (int i = 0; i < n; ++i) {
         auto it = find(secret_copy.begin(), secret_copy.end(), guess[i]);
         if (it != secret_copy.end()) {
