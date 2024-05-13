@@ -3,6 +3,8 @@
 
 #include <vector>
 
+using namespace std; 
+
 class Code {
 private:
     vector<int> secret_code;
