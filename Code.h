@@ -5,7 +5,7 @@
 
 class Code {
 private:
-    std::vector<int> secret_code;
+    vector<int> secret_code;
     int n;
     int m;
 public:
