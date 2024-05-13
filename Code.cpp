@@ -51,7 +51,7 @@ int Code::check_incorrect(const vector<int>& guess) {
 }
 
 void Code::print_secret_code() {
-    std::cout << "Secret Code: ";
+    cout << "Secret Code: ";
     for (int digit : secret_code) {
         cout << digit << " ";
     }
