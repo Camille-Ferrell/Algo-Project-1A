@@ -11,16 +11,17 @@ code::code(int m, int n) {
     range = m;
 }
 
-// Get Length from Private
+// Getter for code length
 int code::getLength() const {
     return length;
 }
 
+// Getter for code range
 int code::getRange() const {
     return range;
 }
 
-// Read input from user
+// Method to read inputs for code length and range
 void code::readInputs() {
     cout << "Please Enter the Desired Code Length: ";
     cin >> length;
@@ -28,24 +29,30 @@ void code::readInputs() {
     cin >> range;
 }
 
-// make the random sequence and use random time seed later
+// Method to generate a random sequence as the secret code
 vector<int> code::makeSequence(int n, int m) {
     vector<int> Sequence;
 
+    // Generate random sequence
     for (int i = 0; i < n; i++) {
         int temp = rand() % m; // from range 0 to m - 1
         Sequence.push_back(temp);
     }
+
+    // Save the secret code internally
+    secretCode = Sequence;
+
     return Sequence;
 }
 
-// Obtain the guess from the user
+// Method to get a sequence from the user as their guess
 vector<int> code::getSequence(int n) {
     vector<int> guess(n);
     cout << "Please Enter Your Guess of the Code: \n";
 
     int temp;
 
+    // Get user input for the guess
     for (int i = 0; i < n; i++) {
         cin >> temp;
         guess[i] = temp;
@@ -53,13 +60,13 @@ vector<int> code::getSequence(int n) {
     return guess;
 }
 
-// Check if secretCode is equal to Guess at same index
-// If it is, add 1 to correct & returns # of correct
-int code::checkCorrect(vector<int> Sequence, vector<int> Guess, int n) {
+// Method to check how many digits in the guess are correct
+int code::checkCorrect(vector<int> Guess) {
     int correct = 0;
 
-    for (int i = 0; i < n; i++) {
-        if (Sequence[i] == Guess[i]) {
+    // Compare each digit of the guess with the corresponding digit of the secret code
+    for (int i = 0; i < length; i++) {
+        if (secretCode[i] == Guess[i]) {
             correct++;
         }
     }
@@ -67,16 +74,17 @@ int code::checkCorrect(vector<int> Sequence, vector<int> Guess, int n) {
     return correct;
 }
 
-// Check if secretCode is NOT equal to Guess at same index
-// If it is incorrect, add 1 to coutner & returns # of incorrect
-int code::checkIncorrect(vector<int> Sequence, vector<int> Guess, int n) {
+// Method to check how many digits in the guess are incorrect
+int code::checkIncorrect(vector<int> Guess) {
     int incorrect = 0;
 
-    for (int i = 0; i < n; i++) {
-        if (Sequence[i] != Guess[i]) {
+    // Compare each digit of the guess with the corresponding digit of the secret code
+    for (int i = 0; i < length; i++) {
+        if (secretCode[i] != Guess[i]) {
             incorrect++;
         }
     }
 
     return incorrect;
 }
+
