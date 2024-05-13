@@ -27,6 +27,8 @@ void Code::initialize_randomly() {
 
 // testing github
 
+// Check if value in index i is equal for guess and secret_code
+// Returns # of correct answers
 int Code::check_correct(const vector<int>& guess) {
     int count = 0;
     for (int i = 0; i < n; ++i) {
@@ -37,6 +39,8 @@ int Code::check_correct(const vector<int>& guess) {
     return count;
 }
 
+// Check if value in index i is equal for guess and secret_code
+// Returns # of incorrect answers
 int Code::check_incorrect(const vector<int>& guess) {
     int count = 0;
     vector<int> secret_copy = secret_code;
