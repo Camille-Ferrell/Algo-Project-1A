@@ -42,20 +42,20 @@ int Code::check_correct(const vector<int>& guess) {
 // Check if value in index i is equal for guess and secret_code
 // Returns # of incorrect answers
 int Code::check_incorrect(const vector<int>& guess) {
-    int count = 0;
-    vector<int> secret_copy = secret_code;
+    int count = 0; // initialize a counter to keep track of the number of correct digits in the wrong location
+    vector<int> secret_copy = secret_code; // copy to avoid changing the actual secret code
 
     // I DONT KNOW WHAT THIS IS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // Maybe can just use same thin as line 33 to 37 just with a != on line 35
-    for (int i = 0; i < n; ++i) {
-        auto it = find(secret_copy.begin(), secret_copy.end(), guess[i]);
-        if (it != secret_copy.end()) {
-            count++;
-            secret_copy.erase(it);
+    for (int i = 0; i < n; ++i) { // loop through each digit of the guess 
+        auto it = find(secret_copy.begin(), secret_copy.end(), guess[i]); // search for the current guess digit in the secret code
+        if (it != secret_copy.end()) { // if the guess digit is found in the secret code
+            count++; // increment the count of correct digits in the wrong location
+            secret_copy.erase(it); // remove the matched digit from the copy of the secret code
         }
     }
-    count -= check_correct(guess);
-    return count;
+    count -= check_correct(guess); // subtract the count of correct digits in the correct location
+    return count; // return the amount of correct digits in the incorrect location
 }
 
 // Print Secret_Code
