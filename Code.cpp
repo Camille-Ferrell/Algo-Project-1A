@@ -1,3 +1,13 @@
+/*
+This file contains the methods of the Code class
+It contains the implementations of all of the functions defined in the header file
+It contains a constructor to create the objects of the class, and pass the the private memebers
+It contains the initialize randomly function which creates the secret code
+It contains the check correct function which checks the number of digits guessed correctly in the right location
+It contains the check incorrect function whcih checks the number of digits guesses correctly in the wrong location
+Lastly, it contains a print secret code function which simply prints the secret code that was initialized earlier
+*/
+
 #include "Code.h"
 #include <cstdlib>
 #include <ctime>
