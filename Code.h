@@ -1,3 +1,11 @@
+/*
+Project 1A
+
+This file contains the declarations of the functions for the game
+It creates the Code class and the private and public member functions
+
+*/
+
 #ifndef CODE_H
 #define CODE_H
 

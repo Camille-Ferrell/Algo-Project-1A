@@ -1,4 +1,6 @@
 /*
+Project 1A
+
  This file contains the main program to play the game designed in the two previous files
  This file prompt the user to enter the code length and range of digits
  It creates the secret code by calling the initialize randomly method
