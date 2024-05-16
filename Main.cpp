@@ -1,3 +1,12 @@
+/*
+ This file contains the main program to play the game designed in the two previous files
+ This file prompt the user to enter the code length and range of digits
+ It creates the secret code by calling the initialize randomly method
+ It then prints the secret code for grading purposes
+ It then prompts the user to play at least 10 guesses to get the secret code
+ If the user gets the secret code, it congradulates the user
+ If not, it ends the game and again prints the secret code to the user
+*/
 #include "Code.h"
 #include <vector>
 #include <iostream>
